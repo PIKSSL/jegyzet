@@ -1,0 +1,13 @@
+   get(utvonal, callback){
+        fetch(utvonal,{
+            method:"GET",
+            headers:{
+                "Content-Type":"application/json",
+            }
+        }).then(response => response.json())
+        .then(adat =>{
+            callback(adat);
+        }).catch(error =>{
+            console.error("hibe",error);
+        })
+    }

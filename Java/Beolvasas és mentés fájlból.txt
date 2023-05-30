@@ -1,0 +1,28 @@
+    try {
+      File myObj = new File("filename.txt");
+      if (myObj.createNewFile()) {
+        System.out.println("File created: " + myObj.getName());
+      } else {
+        System.out.println("File already exists.");
+      }
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+
+
+    private void beolvasas() throws IOException {
+        List<String> adatok = Files.readAllLines(Path.of("pilotak.csv"));
+        adatok.remove(0);
+        String[] sor;
+        System.out.println("Az állomány hossza fejléc nélkül:"+adatok.size());
+        for (String adat : adatok) {
+            sor = adat.split(";");
+            if(sor.length>3){
+                pilotak.add(new Pilota(sor[0],sor[1],sor[2],sor[3]));
+            }else{
+                pilotak.add(new Pilota(sor[0],sor[1],sor[2]));
+            }
+        }
+        
+    }

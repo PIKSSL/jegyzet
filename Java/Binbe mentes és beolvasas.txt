@@ -1,0 +1,27 @@
+    public void mentes() {
+        try {
+            FileOutputStream fajlki = new FileOutputStream("kert.bin");
+            ObjectOutputStream mentes = new ObjectOutputStream(fajlki);
+            mentes.writeObject(this);
+            mentes.close();
+            fajlki.close();
+            System.out.println("Az állapot sikeresen mentve lett a kert.bin fájlba.");
+        } catch (IOException e) {
+            System.out.println("Hiba történt a fájl mentése során: " + e.getMessage());
+        }
+    }
+
+    public Kert frissit() {
+        try {
+            FileInputStream fajlbe = new FileInputStream("kert.bin");
+            ObjectInputStream mentettfajl = new ObjectInputStream(fajlbe);
+            Kert kert = (Kert) mentettfajl.readObject();
+            mentettfajl.close();
+            fajlbe.close();
+            System.out.println("Az állapot sikeresen betöltve lett a kert.bin fájlból.");
+            return kert;
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Hiba történt a fájl betöltése során: " + e.getMessage());
+            return new Kert();
+        }
+    }

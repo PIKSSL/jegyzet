@@ -1,0 +1,21 @@
+    private void feladat3() throws ParseException{
+        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+        for (Pilota pilota : pilotak) {
+            try{
+            if(pilota.getSzulnap().before(format.parse("1901.01.01"))){
+                System.out.println(pilota.getNev()+" "+pilota.getSzulnap());
+            }
+            }catch(ParseException ex){
+                
+            } }
+    }
+
+
+    public void setSzulnap(String szulnap) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+        try{
+            this.szulnap = format.parse(szulnap);
+        }catch(ParseException ex){
+         ex.printStackTrace();
+        }
+    }

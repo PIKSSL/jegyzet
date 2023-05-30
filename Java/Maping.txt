@@ -1,0 +1,12 @@
+    private void feladat5(){
+        Map<String, Integer> frequencyMap = new HashMap<>();
+
+        for (Pilota pilota : pilotak) {
+            frequencyMap.put(pilota.getRajtszam(), frequencyMap.getOrDefault(pilota.getRajtszam(), 0) + 1);
+        }
+        for (Map.Entry<String, Integer> entry : frequencyMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                System.out.println(entry.getKey());
+            }
+        }
+    }
