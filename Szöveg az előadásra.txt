@@ -15,3 +15,9 @@ Rendelés megvalósítása kódrészlet...:
 Egy kódrészletet láthatunk a renndelés felviteléről. Elsőként a beérkezett termékeket php adatszerkezetté alakítjuk, hogy dolgozhassunk vele. Alatta egy cím ellenőrzés, amelyben validáljuk a megadott címet mégegyszer és ha nem sikerül a validáció, a rendelés sikertelennek minősül. Valid cím esetén a rendelést létrehozzuk, aztán felvesszük a rendelés tételeit is. Amennyiben idáig sikeres volt a rendelés felvétel, hozzáadjuk a rendeléshez a végösszeget.
 Itt a rendelés tételek felvételéről és termékek ellenőrzéséről, valamint felviteléről láthatjuk a kód részletet ezen a dián. Először ellenőrizzük a termék létezését az adatbázisban, ami ha létezik, akkor a termék kódjával dolgozunk tovább, ellenkező esetben pedig felvesszük a terméket az adatbázisba. Ezt követően pedig a termékkel létrehozzuk a tételt.
 Végül pedig láthatunk egy részletet a cím ellenőrzésből és létrehozásból. Ha a cím átmegy a validáláson, megnézzük, hogy létezik-e már az adatbázisban és a termékekhez hasonlóan csak akkor veszünk fel újat, ha az még előtte nem létezett az adatbázisban és azt a címet adjuk vissza rendelést létrehozó függvénynek. Ha a cím validáláskor elbukik, a rendelés sikertelennek minősül.
+
+Demo:
+So, the user selects his products that he places in the basket. In the cart you can see the product, its pictures and change the quantity you want to order. By clicking "Next", you can enter your shipping details, but you can also use the previously saved ones. Then, if the user has entered their details correctly, they can place their order.
+
+
+Szóval a felhasználó kiválasztja a termékeit, amelyeket a kosárba helyez. A kosárban láthatja a terméket, annak képét és változtathatja a rendelni kívánt mennyiséget. A "Tovább" gombra kattintva megadhatja a szállítási adatait, de használhatja a korábban elmentetteket is. Ezután leadhatja a rendelést a felhasználó.
